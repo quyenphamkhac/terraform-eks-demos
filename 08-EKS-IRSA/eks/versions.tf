@@ -8,7 +8,7 @@ terraform {
   }
   backend "s3" {
     bucket         = "terraform-eks-1996"
-    key            = "eks-cluster-demo"
+    key            = "dev/eks-cluster/terraform.tfstate"
     region         = "ap-southeast-1"
     profile        = "my-profile"
     dynamodb_table = "Terraform"
