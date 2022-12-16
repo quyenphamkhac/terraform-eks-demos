@@ -7,10 +7,11 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "terraform-state"
-    key            = "eks-remote-state"
+    bucket         = "terraform-eks-1996"
+    key            = "eks-cluster-demo"
     region         = "ap-southeast-1"
-    dynamodb_table = "terraform-lock-state"
+    profile        = "my-profile"
+    dynamodb_table = "Terraform"
   }
 }
 

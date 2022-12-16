@@ -10,6 +10,24 @@ variable "aws_region" {
   default     = "ap-southeast-1"
 }
 
+variable "terraform_dynamodb_table" {
+  description = "Dynamo DB Table which use for terraform state locking"
+  type        = string
+  default     = "Terraform"
+}
+
+variable "terraform_s3_bucket" {
+  description = "S3 Bucket which use to store terraform state files"
+  type        = string
+  default     = "terraform-s3"
+}
+
+variable "terraform_s3_key" {
+  description = "Sub folder to store terraform state files"
+  type        = string
+  default     = "my-project"
+}
+
 variable "environment" {
   description = "Enviroment where AWS resources will be created"
   type        = string
