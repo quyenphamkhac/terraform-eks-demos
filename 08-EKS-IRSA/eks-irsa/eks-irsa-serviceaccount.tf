@@ -7,3 +7,13 @@ resource "kubernetes_service_account_v1" "irsa_demo_sa" {
     }
   }
 }
+
+resource "kubernetes_secret_v1" "irsa_demo_sa" {
+  metadata {
+    annotations = {
+      "kubernetes.io/service-account.name" = kubernetes_service_account_v1.irsa_demo_sa.metadata.0.name
+    }
+  }
+
+  type = "kubernetes.io/service-account-token"
+}
